@@ -297,7 +297,11 @@ async function callVerifyKycApi() {
 }
 
 const API = "https://daugiabe.up.railway.app/api";
-const getImageUrl = (tenanh) => `${API}/imgs/kyc/${tenanh}`;
+const SUPABASE_URL = 'https://gcxlqxkowwkdhyiyjaks.supabase.co'
+function buildImageUrl(key) {
+  if (!key) return '/placeholder.png'
+  return SUPABASE_URL.replace(/\/+$/, '') + '/storage/v1/object/public/' + key
+}
 
 const router = useRouter();
 const route = useRoute();
@@ -431,7 +435,7 @@ const loadModels = async () => {
     // AUTO LOAD CCCD FRONT nếu có query
     const front = route.query.front;
     if (front) {
-      const url = getImageUrl(front);
+      const url = buildImageUrl(front);
       const file = await urlToFile(url, String(front));
       await loadCccdFromFile(file);
     }

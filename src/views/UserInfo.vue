@@ -222,7 +222,7 @@
 
                       <img
                         v-if="cccdFrontPreview || user?.anhmattruoc"
-                        :src="cccdFrontPreview || getImageUrl(user.anhmattruoc)"
+                        :src="cccdFrontPreview || buildImageUrl(user.anhmattruoc)"
                         class="mx-auto max-h-40 object-contain rounded"
                       />
 
@@ -256,7 +256,7 @@
 
                       <img
                         v-if="cccdBackPreview || user?.anhmatsau"
-                        :src="cccdBackPreview || getImageUrl(user.anhmatsau)"
+                        :src="cccdBackPreview || buildImageUrl(user.anhmatsau)"
                         class="mx-auto max-h-40 object-contain rounded"
                       />
 
@@ -331,7 +331,11 @@ import SoftDropdown from "@/components/SoftDropdown.vue";
 import AccountSite from "@/components/AccountSite.vue";
 
 const API = "https://daugiabe.up.railway.app/api";
-const getImageUrl = (tenanh) => `${API}/imgs/kyc/${tenanh}`;
+const SUPABASE_URL = 'https://gcxlqxkowwkdhyiyjaks.supabase.co'
+function buildImageUrl(key) {
+  if (!key) return '/placeholder.png'
+  return SUPABASE_URL.replace(/\/+$/, '') + '/storage/v1/object/public/' + key
+}
 const userStore = useUserStore();
 const router = useRouter();
 
