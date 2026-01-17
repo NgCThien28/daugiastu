@@ -1,4 +1,3 @@
-<!-- UpdateProduct.vue -->
 <template>
   <!-- Popup -->
   <div
@@ -98,7 +97,7 @@
             >
               <img
                 v-if="img.preview || img.tenanh"
-                :src="img.preview || getImageUrl(img.tenanh)"
+                :src="img.preview || buildImageUrl(img.tenanh)"
                 class="object-cover w-full h-full rounded-md"
                 alt=""
               />
@@ -190,6 +189,11 @@ import SoftDropdown from "@/components/SoftDropdown.vue";
 import PopupSubmit from "@/components/PopupSubmit.vue";
 
 const API = "https://daugiabe.up.railway.app/api";
+const SUPABASE_URL = 'https://gcxlqxkowwkdhyiyjaks.supabase.co'
+function buildImageUrl(key) {
+  if (!key) return '/placeholder.png'
+  return SUPABASE_URL.replace(/\/+$/, '') + '/storage/v1/object/public/' + key
+}
 const userStore = useUserStore();
 
 const props = defineProps({ visible: Boolean, product: Object });
@@ -297,8 +301,6 @@ watch(
 function clearErrors() {
   Object.keys(errors).forEach((k) => delete errors[k]);
 }
-
-const getImageUrl = (tenanh) => `${API}/imgs/${tenanh}`;
 
 function extractErrorMessage(err) {
   if (err?.response?.data?.message) return err.response.data.message;
