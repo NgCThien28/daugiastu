@@ -19,7 +19,7 @@ export const useUserStore = defineStore('user', {
       if (!this.token) return null
       try {
         this.loading = true
-        const res = await axios.get('http://localhost:8082/api/auth/me', {
+        const res = await axios.get('https://daugiabe.up.railway.app/api/auth/me', {
           headers: { Authorization: `Bearer ${this.token}` },
         })
 

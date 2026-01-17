@@ -210,7 +210,7 @@ defineOptions({ name: "RegisteredSessions" });
 
 const router = useRouter();
 const route = useRoute();
-const API = "http://localhost:8082/api";
+const API = "https://daugiabe.up.railway.app/api";
 const SUPABASE_URL = 'https://gcxlqxkowwkdhyiyjaks.supabase.co'
 function buildImageUrl(key) {
   if (!key) return '/placeholder.png'

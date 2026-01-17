@@ -178,7 +178,7 @@ import { useUserStore } from "@/stores/userStore";
 import SoftDropdown from "@/components/SoftDropdown.vue";
 import AccountSite from "@/components/AccountSite.vue";
 
-const API = "http://localhost:8082/api";
+const API = "https://daugiabe.up.railway.app/api";
 const userStore = useUserStore();
 
 // Computed từ store

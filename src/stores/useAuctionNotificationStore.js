@@ -15,7 +15,7 @@ export const useAuctionNotificationStore = defineStore('auctionNotification', {
       try {
         const token = Cookies.get('jwt_token')
         if (!token) return
-        const res = await axios.get(`http://localhost:8082/api/notifications?page=${page}&size=${size}`, {
+        const res = await axios.get(`https://daugiabe.up.railway.app/api/notifications?page=${page}&size=${size}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         if (res.data.code === 200) {
@@ -42,7 +42,7 @@ export const useAuctionNotificationStore = defineStore('auctionNotification', {
     async markAsRead(id) {
       try {
         const token = Cookies.get('jwt_token')
-        await axios.patch(`http://localhost:8082/api/notifications/${id}/read`, {}, {
+        await axios.patch(`https://daugiabe.up.railway.app/api/notifications/${id}/read`, {}, {
           headers: { Authorization: `Bearer ${token}` },
         })
         const notif = this.notifications.find(n => n.matb === id)
@@ -58,7 +58,7 @@ export const useAuctionNotificationStore = defineStore('auctionNotification', {
       try {
         const token = Cookies.get('jwt_token')
         if (!token) return
-        await axios.patch(`http://localhost:8082/api/notifications/mark-all-read`, {}, {
+        await axios.patch(`https://daugiabe.up.railway.app/api/notifications/mark-all-read`, {}, {
           headers: { Authorization: `Bearer ${token}` },
         })
         this.notifications.forEach(n => n.trangthai = 'Đã xem')
@@ -73,7 +73,7 @@ export const useAuctionNotificationStore = defineStore('auctionNotification', {
       try {
         const token = Cookies.get('jwt_token')
         if (!token) return
-        await axios.delete(`http://localhost:8082/api/notifications/clear-all`, {
+        await axios.delete(`https://daugiabe.up.railway.app/api/notifications/clear-all`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         this.clear()

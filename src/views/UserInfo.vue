@@ -330,7 +330,7 @@ import ChangePasswordPopup from "@/components/ChangePasswordPopup.vue";
 import SoftDropdown from "@/components/SoftDropdown.vue";
 import AccountSite from "@/components/AccountSite.vue";
 
-const API = "http://localhost:8082/api";
+const API = "https://daugiabe.up.railway.app/api";
 const getImageUrl = (tenanh) => `${API}/imgs/kyc/${tenanh}`;
 const userStore = useUserStore();
 const router = useRouter();

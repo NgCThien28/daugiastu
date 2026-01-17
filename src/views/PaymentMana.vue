@@ -426,7 +426,7 @@ import AccountSite from "@/components/AccountSite.vue";
 
 defineOptions({ name: "DepositPayments" });
 
-const API = "http://localhost:8082/api";
+const API = "https://daugiabe.up.railway.app/api";
 const userStore = useUserStore();
 
 // Computed từ store

@@ -232,12 +232,12 @@ import SockJS from "sockjs-client";
 import Stomp from "stompjs";
 import axios from "axios";
 
-const API = "http://localhost:8082/api";
+const API = "https://daugiabe.up.railway.app/api";
 const route = useRoute();
 const router = useRouter();
 const userStore = useUserStore();
 const { user, token } = storeToRefs(userStore);
-const SOCKET_URL = computed(() => `http://localhost:8082/api/ws-auction?token=${token.value}`);
+const SOCKET_URL = computed(() => `https://daugiabe.up.railway.app/api/ws-auction?token=${token.value}`);
 const roomId = ref("");
 const productName = ref("");
 const startPrice = ref(0);

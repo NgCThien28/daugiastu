@@ -280,7 +280,7 @@ import { useRoute, useRouter } from "vue-router";
 import axios from "axios";
 import { useUserStore } from "@/stores/userStore";
 
-const API = "http://localhost:8082/api/";
+const API = "https://daugiabe.up.railway.app/api/";
 const SUPABASE_URL = 'https://gcxlqxkowwkdhyiyjaks.supabase.co'
 function buildImageUrl(key) {
   if (!key) return '/placeholder.png'

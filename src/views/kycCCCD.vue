@@ -296,7 +296,7 @@ async function callVerifyKycApi() {
   }
 }
 
-const API = "http://localhost:8082/api";
+const API = "https://daugiabe.up.railway.app/api";
 const getImageUrl = (tenanh) => `${API}/imgs/kyc/${tenanh}`;
 
 const router = useRouter();

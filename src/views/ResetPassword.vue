@@ -73,7 +73,7 @@ const submit = async () => {
   loading.value = true;
   try {
     const res = await axios.put(
-      "http://localhost:8082/api/auth/reset-password",
+      "https://daugiabe.up.railway.app/api/auth/reset-password",
       { matkhau: password.value },
       {
         params: { token: token.value },
