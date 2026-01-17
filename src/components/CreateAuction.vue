@@ -146,7 +146,7 @@ import axios from "axios";
 import { useUserStore } from "@/stores/userStore";
 import PopupSubmit from "@/components/PopupSubmit.vue";
 
-const API = "http://localhost:8082/api";
+const API = "https://daugiabe.up.railway.app/api";
 const userStore = useUserStore();
 
 // Props & Emits

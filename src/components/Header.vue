@@ -469,7 +469,7 @@ import { useAuctionNotificationStore } from "../stores/useAuctionNotificationSto
 import { useToastStore } from "../stores/useToastStore";
 import { faBell, faCircleUser } from "@fortawesome/free-solid-svg-icons";
 
-const API = "http://localhost:8082/api";
+const API = "https://daugiabe.up.railway.app/api";
 const router = useRouter();
 const route = useRoute();
 const userStore = useUserStore();

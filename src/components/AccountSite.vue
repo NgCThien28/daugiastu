@@ -48,7 +48,7 @@ import { useUserStore } from "@/stores/userStore";
 import { useToastStore } from "@/stores/useToastStore";
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 
-const API = "http://localhost:8082/api";
+const API = "https://daugiabe.up.railway.app/api";
 
 const props = defineProps({
   name: { type: String, default: "nguyen cong tan" },

@@ -189,7 +189,7 @@ import { useUserStore } from "@/stores/userStore";
 import SoftDropdown from "@/components/SoftDropdown.vue";
 import PopupSubmit from "@/components/PopupSubmit.vue";
 
-const API = "http://localhost:8082/api";
+const API = "https://daugiabe.up.railway.app/api";
 const userStore = useUserStore();
 
 const props = defineProps({ visible: Boolean, product: Object });

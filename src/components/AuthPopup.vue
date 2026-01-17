@@ -567,7 +567,7 @@ import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/userStore";
 import { useToastStore } from "../stores/useToastStore";
 
-const API = "http://localhost:8082/api";
+const API = "https://daugiabe.up.railway.app/api";
 
 const show = ref(false);
 const mode = ref("login");

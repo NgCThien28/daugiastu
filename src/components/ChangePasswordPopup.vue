@@ -86,7 +86,7 @@ import { useToastStore } from "../stores/useToastStore";
 import { useRouter } from "vue-router";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 const router = useRouter();
-const API = "http://localhost:8082/api";
+const API = "https://daugiabe.up.railway.app/api";
 
 const show = ref(false);
 const matkhaucu = ref("");
